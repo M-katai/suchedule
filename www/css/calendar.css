@@ -1,0 +1,80 @@
+/* table */
+table {
+    margin-top: 10%;
+    margin-right: 3%;
+    margin-left: 3%;
+    width: 95%;
+    height: 45%;
+    background-color: #fff; 
+    border: solid 1px #dfdfdf;
+    border-collapse: collapse
+}
+
+td {
+    border: 1px solid #dfdfdf;
+}
+
+tr {
+    vertical-align: top;
+    margin-top: 5px;
+}
+
+/* 見出し */
+.headname {
+    float: left;
+    margin-left: 5%;
+    font-size: 25px;
+    color: #595959;
+    margin-top: 5%;
+}
+
+.edit {
+    float: right;
+    margin-right: 5%;
+    margin-top: 4%;
+}
+
+/* 曜日 */
+.sunday {
+    color: #ff8484;
+    padding-right: 3px;
+    padding-left: 5px;
+}
+
+.satday {
+    color: #8484ff;
+    padding-right: 4px;
+    padding-left: 6px;
+}
+
+.elsedays {
+    padding-right: 3px;
+    padding-left: 6px;
+}
+
+.elseday {
+    color: #202020;
+    padding-right:1px;
+    padding-left: 5px;
+}
+
+.friday {
+    padding-right: 6px;
+    padding-left: 10px;
+}
+
+.week {
+    vertical-align: top;
+    height: 8%;
+    font-size: 15px;
+}
+
+/* 日ごと */
+
+.today {
+    background-color: #add6ff;
+}
+
+.days {
+    background-color: #ffffff;
+}

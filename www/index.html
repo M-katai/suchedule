@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/calendar.css">
+    <link rel="stylesheet" href="css/edit.css">
+    <script src="js/main.js"></script>
+    <script src="js/calendars.js"></script>
+    <script src="js/app.js"></script>
+    
+    <script>
+        ons.bootstrap();
+        
+        ons.ready(function() {   
+          carousel.on('overscroll', function(event) {
+              carousel.refresh();
+              setCalendar(-1);
+              
+          });
+        });
+    </script>
+    
+</head>
+<body>
+
+    <ons-navigator var="myNavigator" page="calendar.html">
+    </ons-navigator>
+    
+    <ons-template id="calendar.html">
+      <ons-page id="calendars">
+        <ons-carousel fullscreen swipeable auto-scroll overscrollable  initial-index="1" var="carousel">
+        
+        <ons-carousel-item>
+         
+            <div class="edit">
+              <ons-icon icon="ion-compose" size="35px" ng-click="myNavigator.pushPage('newedit.html');"></ons-icon>
+            </div>
+            
+            <script>setCalendar(-1);</script>
+          
+            <br />
+            <div class="day_list">
+              <ons-list>
+                <ons-list-item class="list__item list__item--chevron" ng-click="myNavigator.pushPage('newedit.html');">
+                  12:00 テスト &yen;1000
+                </ons-list-item>
+              </ons-list>
+            </div>
+          </ons-carousel-item>
+        
+          <ons-carousel-item>
+         
+            <div class="edit">
+              <ons-icon icon="ion-compose" size="35px" ng-click="myNavigator.pushPage('newedit.html');"></ons-icon>
+            </div>
+          
+            <script>setCalendar(0);</script>
+            <br />
+            <div class="day_list">
+              <ons-list>
+                <ons-list-item class="list__item list__item--chevron" ng-click="myNavigator.pushPage('newedit.html');">
+                  12:00 テスト &yen;1000
+                </ons-list-item>
+              </ons-list>
+            </div>
+          </ons-carousel-item>
+          
+        <ons-carousel-item>
+         
+            <div class="edit">
+              <ons-icon icon="ion-compose" size="35px" ng-click="myNavigator.pushPage('newedit.html');"></ons-icon>
+            </div>
+          
+            <script>setCalendar(1);</script>
+            <br />
+            <div class="day_list">
+              <ons-list>
+                <ons-list-item class="list__item list__item--chevron" ng-click="myNavigator.pushPage('newedit.html');">
+                  12:00 テスト &yen;1000
+                </ons-list-item>
+              </ons-list>
+            </div>
+          </ons-carousel-item>
+          
+        </ons-carousel>
+      </ons-page>
+    </ons-template>
+    
+</body>
+</html>
