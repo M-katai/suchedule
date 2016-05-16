@@ -39,4 +39,7 @@
   <preference name="monaca:AndroidIsPackageNameSeparate" value="false"/>
   <preference name="monaca:targetFamilyiPhone" value="1"/>
   <preference name="monaca:targetFamilyiPad" value="1"/>
+  <preference name="monaca:MonacaBackendUrl" value="https://cloud.monaca.mobi/json-rpc/"/>
+  <preference name="monaca:MonacaBackendId" value="57395b6afd1734c502cc7e81"/>
+  <preference name="monaca:MonacaBackendApiKey" value="3f7a4bb2db6d4dc1231eb8e17dacdb73750eada9ecffb04733df4bb98c4adb58"/>
 </widget>

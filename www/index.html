@@ -12,47 +12,53 @@
     <script src="js/main.js"></script>
     <script src="js/calendars.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/memo.js"></script>
+    <script src="js/event.js"></script>
     
     <script>
         ons.bootstrap();
         
         ons.ready(function() {   
           carousel.on('overscroll', function(event) {
-              carousel.refresh();
-              setCalendar(-1);
-              
+              // carousel.refresh();
+              // setCalendar(-1);
           });
         });
     </script>
     
 </head>
 <body>
-
-    <ons-navigator var="myNavigator" page="calendar.html">
-    </ons-navigator>
-    
-    <ons-template id="calendar.html">
+  <!-- tab --></!-->
+    <ons-tabbar>
+      <ons-tab page="home.html" label="Home" icon="ion-home" active="true"></ons-tab>
+      <ons-tab page="schedule.html" label="Schedu" icon="ion-android-list"></ons-tab>
+      <ons-tab page="livehouse.html" label="LiveHouse" icon="ion-speakerphone"></ons-tab>
+      <ons-tab page="setting.html" label="Setting" icon="ion-gear-b"></ons-tab>
+    </ons-tabbar>
+  
+  <!-- tmp_navi --></!-->
+    <ons-template id="home.html">
+      <ons-navigator var="myNavigator" page="calendar.html">
+      </ons-navigator>
+    </ons-template>
+   
+  <!-- calendar --></!-->
+    <ons-template id="calendar.html"> 
+    <div data-role="page" id="calendar">
       <ons-page id="calendars">
+        <img src="img/hito1.jpg" style="width: 100%; height: 100%; position: fixed;"/>
         <ons-carousel fullscreen swipeable auto-scroll overscrollable  initial-index="1" var="carousel">
         
-        <ons-carousel-item>
-         
+    <!-- 前月 --></!-->          
+        <ons-carousel-item >
             <div class="edit">
               <ons-icon icon="ion-compose" size="35px" ng-click="myNavigator.pushPage('newedit.html');"></ons-icon>
             </div>
-            
             <script>setCalendar(-1);</script>
-          
-            <br />
-            <div class="day_list">
-              <ons-list>
-                <ons-list-item class="list__item list__item--chevron" ng-click="myNavigator.pushPage('newedit.html');">
-                  12:00 テスト &yen;1000
-                </ons-list-item>
-              </ons-list>
-            </div>
+
           </ons-carousel-item>
         
+    <!-- 当月 --></!-->          
           <ons-carousel-item>
          
             <div class="edit">
@@ -60,16 +66,11 @@
             </div>
           
             <script>setCalendar(0);</script>
-            <br />
-            <div class="day_list">
-              <ons-list>
-                <ons-list-item class="list__item list__item--chevron" ng-click="myNavigator.pushPage('newedit.html');">
-                  12:00 テスト &yen;1000
-                </ons-list-item>
-              </ons-list>
-            </div>
+
           </ons-carousel-item>
           
+          
+    <!-- 翌月 --></!-->      
         <ons-carousel-item>
          
             <div class="edit">
@@ -77,18 +78,12 @@
             </div>
           
             <script>setCalendar(1);</script>
-            <br />
-            <div class="day_list">
-              <ons-list>
-                <ons-list-item class="list__item list__item--chevron" ng-click="myNavigator.pushPage('newedit.html');">
-                  12:00 テスト &yen;1000
-                </ons-list-item>
-              </ons-list>
-            </div>
+
           </ons-carousel-item>
           
         </ons-carousel>
       </ons-page>
+      </div>
     </ons-template>
     
 </body>

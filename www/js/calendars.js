@@ -8,11 +8,10 @@ function setCalendar( setToday ){
     myMonth = myDate.getMonth();
     myDate.setDate(1); 
   
-  //変数による付き設定
+  //変数による月設定
     myMonth = myMonth + setToday; 
     myDate.setMonth(myMonth); 
     myYear = myDate.getFullYear(); 
-    myMonth = myDate.getMonth();
     myWeek = myDate.getDay(); 
   
   //閏年判定
@@ -25,6 +24,7 @@ function setCalendar( setToday ){
     myTable   = new Array(7*myTblLine); 
     for(i=0; i<7*myTblLine; i++) myTable[i]="　";
     for(i=0; i<myMonthTbl[myMonth]; i++)myTable[i+myWeek]=i+1;
+
    
     // *********************  
     //      カレンダーの表示  
@@ -33,7 +33,6 @@ function setCalendar( setToday ){
 document.write("<table>");
 document.write("<div class='headname'>",myYear, "年", (myMonth+1), "月</div>");
 document.write("<br/>");
-
 
 //曜日のセット
 document.write("<tr class='week'>");
@@ -49,7 +48,9 @@ for(i=0; i<7; i++){
 }
 document.write("</tr>");
 
-//ループ
+//日付セットループ
+myMonth = myMonth + 1;
+if(myMonth < 10) {myMonth = "0" + myMonth; }
 for(i=0; i<myTblLine; i++){
    document.write("<tr>");
    for(j=0; j<7; j++){
@@ -59,7 +60,12 @@ for(i=0; i<myTblLine; i++){
       else if(j==6)      document.write(" class='satday' >"); //土曜日
       else if(j==0)      document.write(" class='sunday' >"); //日曜日
       else               document.write(" class='days' >");
-      document.write("<div>",myDat,"</div>");
+      if(myDat<10){
+          myDat = "0" + myDat;
+          document.write("<div value="+ myYear+ myMonth+myDat +" onclick='getId(this)'>",myDat,"</div>");
+      } else {
+          document.write("<div value="+ myYear+"\-"+ myMonth+"\-"+myDat +" onclick='getId(this)'>",myDat,"</div>");
+      }
       document.write("</td>");
    }
    document.write("</tr>");

@@ -5,7 +5,7 @@ table {
     margin-left: 3%;
     width: 95%;
     height: 45%;
-    background-color: #fff; 
+    background-color: rgba(245,245,245,0.3);
     border: solid 1px #dfdfdf;
     border-collapse: collapse
 }
@@ -72,9 +72,9 @@ tr {
 /* 日ごと */
 
 .today {
-    background-color: #add6ff;
+    background-color: rgba(173,214,255,0.3);
 }
 
 .days {
-    background-color: #ffffff;
+    background-color: rgba(245,245,245,0.3);
 }

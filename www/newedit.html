@@ -7,24 +7,31 @@
     <link rel="stylesheet" href="components/loader.css">
     <script src="components/loader.js"></script>
 </head>
-<body>
+<body id="edit">
+  <!-- ヘッダーツールバー --></!-->
     <ons-toolbar>
       <div class="left">
         <ons-back-button>Back</ons-back-button>
       </div>
       <div class="right">
-        <ons-button class="button--quiet" style="margin-right: 8%;">Save</ons-button>
+        <ons-button class="button--quiet" style="margin-right: 8%;" id="saveBtn">Save</ons-button>
       </div>
     </ons-toolbar>
+    
+  <!-- 入力エリア --></!-->
      <div class="editerea">
-        <input type="text" class="text-input--underbar" placeholder="title" style="font-size: 18px;">
+        <input type="text" class="text-input--underbar" placeholder="Title" id="title" style="font-size: 20px; width: 100%;">
+        
+        <input type="text" class="text-input--underbar" placeholder="Artists" id="artisis" style="font-size: 18px; margin-top: 5%; width: 100%;">
+        
+        <input type="text" class="text-input--underbar" placeholder="LiveHouse" id="livehouse" style="font-size: 18px; margin-top: 2%; width: 100%;">
         <br /><br />
         <span>開始</span>
-        <input type="date" class="text-input--underbar" value="2016-05-02" style="font-size: 18px;">
+        <input type="date" class="text-input--underbar" value='getAttribute('el');' style="font-size: 18px;" id="chkday">
         <input type="time" class="text-input--underbar" value="00:00" style="font-size: 18px;" id="starttime">
         <br /><br />
         <span>終了</span>
-        <input type="date" class="text-input--underbar" value="2016-05-02" style="font-size: 18px;">
+        <input type="date" class="text-input--underbar" value='' style="font-size: 18px;" id="chkdays">
         <input type="time" class="text-input--underbar" value="00:00" style="font-size: 18px;" id="endtime">
         <br /><br />
         <span style="margin-right: 30%;">終日</span>
@@ -36,21 +43,7 @@
         <textarea class="textarea" rows="5" placeholder="memo" style="width: 95%;"></textarea>
         <br /><br />
         <ons-icon icon="ion-android-pin"></ons-icon>
-        <input type="text" class="text-input--underbar" placeholder="" style="font-size: 18px;">
-        <br /><br />
-        <span>出費<input type="text" class="text-input--transparent" value="0" id="total" style="margin-left: 50%; width:100px;" readonly="readonly"></span>
-        <ons-scroller style="height: 110px">
-        <input type="text" class="text-input--underbar" placeholder="memo" style="font-size: 18px; width: 50%;">
-        <input type="number" class="text-input--underbar" placeholder="￥" style="font-size: 18px;  width: 40%;" id="num0" onblur="addsum(this)">
-        <br />
-        <input type="text" class="text-input--underbar" placeholder="memo" style="font-size: 18px; width: 50%;">
-        <input type="number" class="text-input--underbar" placeholder="￥" style="font-size: 18px;  width: 40%;"  id="num1" onblur="addsum(this)">
-        <br />
-        <input type="text" class="text-input--underbar" placeholder="memo" style="font-size: 18px; width: 50%;" onclick="add(2)">
-        <input type="number" class="text-input--underbar" placeholder="￥" style="font-size: 18px;  width: 40%;"  id="num2" onblur="addsum(this)">
-        <br />
-        <div id="input"></div>
-        </ons-scroller>
+        <input type="text" class="text-input--underbar" placeholder="URL" style="font-size: 18px;">
      </div>
       
 </body>

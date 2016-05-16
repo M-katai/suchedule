@@ -141,3 +141,14 @@
     document.getElementById("total").value=sams;
   }
   
+  
+  function getId(obj) {
+      myNavigator.pushPage('newedit.html');
+      var mm = obj.getAttribute('value');
+      //  var oo = mm.replace(/\//g, "\-");
+      //var mm = parseInt(obj.getAttribute('value'));
+      //alert(mm);
+    //  document.write(mm);
+     // document.getElementById('#chkday').value=mm;  
+
+  }
